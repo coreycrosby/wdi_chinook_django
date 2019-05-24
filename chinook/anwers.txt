@@ -1,0 +1,37 @@
+1. 
+Artist.objects.get(name='Queen')
+Album.objects.filter(artist_id=51)
+[t.title for t in Album.objects.filter(artist_id=51)]
+
+2. 
+MediaType.objects.get(name= 'Protected MPEG-4 video file')
+Track.objects.filter(media_type_id=3).count()
+
+3.
+Genre.objects.get(name='Hip Hop/Rap')
+
+4.
+Genre.objects.get(name='Hip Hop/Rap')
+Track.objects.filter(genre_id = 17).count()
+
+5.
+Track.objects.aggregate(Sum('milliseconds'))
+
+6.
+MediaType.objects.get(name='MPEG audio file')
+Track.objects.filter(media_type=1).aggregate(Max('unit_price')
+
+7.
+Track.objects.filter(media_type=1).order_by('-unit_price')[0].name
+
+8.
+Artist.objects.order_by('created_at') 
+[t.name for t in Artist.objects.order_by('created_at')] 
+
+
+9.
+Track.objects.filter(genre_id=15).order_by('-unit_price')[0].name
+
+10.
+[t.name for t in Track.objects.filter(genre_id=15, media_type_id=1)]
+
